@@ -3,46 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SecureMind — The AI Agent Security Platform</title>
-  <meta name="description" content="SecureMind is the AI agent security platform. 10 open-source repositories on GitHub — rapidsecureclaw, openclaw, openclaw-llmproxy, breach-intel, sentinel, and more — to protect, detect, monitor, and respond to AI agent threats.">
-  <meta name="keywords" content="AI agent security, DLP, breach intelligence, sentinel monitoring, SecureRapidClaw, AI coding agent protection, LLM security platform">
+  <title>Agnostic Security — Enterprise DLP for AI Coding Agents</title>
+  <meta name="description" content="Agnostic Security is SecureMind's enterprise DLP engine for AI coding agents. VS Code extension, Claude Code hooks, smart routing, vulnerability scanning — works with Copilot, Claude Code, Cursor, and any LLM.">
+  <meta name="keywords" content="AI agent DLP, GitHub Copilot security, Claude Code DLP, Cursor security, VS Code AI security extension, AI coding agent protection, secret detection, prompt injection protection">
   <meta name="author" content="SecureMind">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://securemind.live/">
+  <link rel="canonical" href="https://secure-mind-live.github.io/agnostic-security-site/">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://securemind.live/">
+  <meta property="og:url" content="https://secure-mind-live.github.io/agnostic-security-site/">
   <meta property="og:site_name" content="SecureMind">
-  <meta property="og:title" content="SecureMind — The AI Agent Security Platform">
-  <meta property="og:description" content="10 open-source repositories to protect, detect, monitor, and respond to AI agent threats. Works with Copilot, Claude Code, Cursor, LangChain, and any LLM.">
+  <meta property="og:title" content="Agnostic Security — Enterprise DLP for AI Coding Agents">
+  <meta property="og:description" content="Enterprise DLP engine for AI coding agents. VS Code extension, Claude Code hooks, smart routing, vulnerability scanning. Works with any LLM.">
   <meta property="og:image" content="https://securemind.live/og-image.png">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@securemindlive">
-  <meta name="twitter:title" content="SecureMind — The AI Agent Security Platform">
-  <meta name="twitter:description" content="10 open-source repos. One platform. Complete AI agent security for every team.">
+  <meta name="twitter:title" content="Agnostic Security — Enterprise DLP for AI Coding Agents">
+  <meta name="twitter:description" content="Enterprise DLP engine for AI coding agents. Works with Copilot, Claude Code, Cursor, and any LLM.">
   <meta name="twitter:image" content="https://securemind.live/og-image.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "name": "SecureMind",
-        "url": "https://securemind.live",
-        "logo": "https://securemind.live/og-image.png",
-        "sameAs": ["https://github.com/secure-mind-live"]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "SecureMind Platform",
-        "description": "The complete AI agent security platform — DLP, breach intelligence, monitoring, and rapid response.",
-        "applicationCategory": "SecurityApplication",
-        "operatingSystem": "macOS, Linux, Windows",
-        "url": "https://securemind.live",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "sameAs": ["https://github.com/secure-mind-live"]
-      }
-    ]
+    "@type": "SoftwareApplication",
+    "name": "Agnostic Security",
+    "description": "Enterprise DLP engine for AI coding agents — VS Code extension, Claude Code hooks, smart routing, vulnerability scanning. Part of the SecureMind platform.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "macOS, Linux, Windows",
+    "url": "https://secure-mind-live.github.io/agnostic-security-site/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "sameAs": ["https://github.com/secure-mind-live/agnostic-security-releases"]
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
@@ -50,178 +39,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* ── Product cards ── */
-    .product-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem 2rem;
-      transition: all 0.3s var(--ease);
-      position: relative;
-      overflow: hidden;
-    }
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-      opacity: 0;
-      transition: opacity 0.3s var(--ease);
-    }
-    .product-card:hover { border-color: var(--border-hover); transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-    .product-card:hover::before { opacity: 1; }
-
-    .product-card.p-securemind::before  { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
-    .product-card.p-breachintel::before { background: linear-gradient(90deg, #ef4444, #f97316); }
-    .product-card.p-sentinel::before    { background: linear-gradient(90deg, #38bdf8, #6366f1); }
-    .product-card.p-rapidclaw::before   { background: linear-gradient(90deg, #22c55e, #38bdf8); }
-    .product-card.p-openclaw::before    { background: linear-gradient(90deg, #ff6b00, #f97316); }
-    .product-card.p-llmproxy::before    { background: linear-gradient(90deg, #38bdf8, #22c55e); }
-    .product-card.p-secplugin::before   { background: linear-gradient(90deg, #a78bfa, #6366f1); }
-    .product-card.p-releases::before    { background: linear-gradient(90deg, #22c55e, #6366f1); }
-
-    .product-icon {
-      width: 56px; height: 56px;
-      border-radius: var(--radius-md);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; margin-bottom: 1.25rem;
-    }
-    .product-icon.indigo  { background: rgba(99,102,241,0.15); }
-    .product-icon.red     { background: rgba(239,68,68,0.15); }
-    .product-icon.blue    { background: rgba(56,189,248,0.15); }
-    .product-icon.green   { background: rgba(34,197,94,0.15); }
-
-    .product-name {
-      font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem;
-      letter-spacing: -0.015em;
-    }
-    .product-tag {
-      display: inline-block; font-size: 0.68rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      padding: 0.2rem 0.6rem; border-radius: var(--radius-full);
-      margin-bottom: 1rem;
-    }
-    .product-tag.indigo  { background: rgba(99,102,241,0.15); color: var(--accent); }
-    .product-tag.red     { background: rgba(239,68,68,0.12); color: #f87171; }
-    .product-tag.blue    { background: rgba(56,189,248,0.12); color: var(--info); }
-    .product-tag.green   { background: rgba(34,197,94,0.12); color: var(--success); }
-    .product-tag.orange  { background: rgba(255,107,0,0.12); color: var(--orange); }
-    .product-tag.purple  { background: rgba(167,139,250,0.12); color: var(--purple); }
-    .product-icon.orange { background: rgba(255,107,0,0.15); }
-    .product-icon.purple { background: rgba(167,139,250,0.15); }
-
-    .product-desc {
-      font-size: 0.88rem; color: var(--text-secondary);
-      line-height: 1.65; margin-bottom: 1.5rem;
-    }
-    .product-features { list-style: none; margin-bottom: 1.75rem; }
-    .product-features li {
-      font-size: 0.82rem; color: var(--text-secondary);
-      padding: 0.28rem 0;
-      display: flex; align-items: flex-start; gap: 0.5rem;
-    }
-    .product-features li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; font-size: 0.78rem; margin-top: 0.05rem; }
-    .product-features.red  li::before { color: #f87171; }
-    .product-features.blue li::before { color: var(--info); }
-    .product-features.green  li::before { color: var(--success); }
-    .product-features.orange li::before { color: var(--orange); }
-    .product-features.purple li::before { color: var(--purple); }
-
-    .repos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 3rem;
-    }
-    .repos-divider {
-      border-top: 1px solid var(--border);
-      padding-top: 3rem;
-      margin-top: 3rem;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-
-    /* ── Platform diagram ── */
-    .platform-flow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-    .platform-step {
-      padding: 2rem 1.5rem;
-      border-right: 1px solid var(--border);
-      position: relative;
-      text-align: center;
-    }
-    .platform-step:last-child { border-right: none; }
-    .platform-step-num {
-      width: 32px; height: 32px; border-radius: 50%;
-      background: var(--accent-bg); border: 1px solid var(--accent);
-      color: var(--accent); font-size: 0.82rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 0.75rem;
-    }
-    .platform-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
-    .platform-step p  { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; }
-    .platform-step .step-product {
-      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em;
-      font-weight: 700; margin-bottom: 0.5rem;
-    }
-
-    /* ── Comparison ── */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr repeat(4, 1fr);
-      gap: 0;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-    }
-    .compare-head {
-      background: var(--bg-elevated);
-      padding: 1rem 1.25rem;
-      font-size: 0.78rem; font-weight: 700;
-      border-bottom: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
-    .compare-head:last-child { border-right: none; }
-    .compare-cell {
-      padding: 0.75rem 1.25rem;
-      font-size: 0.82rem; color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-      border-right: 1px solid var(--border);
-    }
-    .compare-cell:last-child { border-right: none; }
-    .compare-row:last-child .compare-cell,
-    .compare-row:last-child .compare-head { border-bottom: none; }
-    .check { color: var(--success); font-weight: 700; }
-    .dash  { color: var(--text-tertiary); }
-
-    @media (max-width: 900px) {
-      .product-grid { grid-template-columns: 1fr; }
-      .repos-grid   { grid-template-columns: repeat(2, 1fr); }
-      .platform-flow { grid-template-columns: repeat(2, 1fr); }
-      .platform-step:nth-child(2) { border-right: none; }
-      .platform-step:nth-child(1),
-      .platform-step:nth-child(2) { border-bottom: 1px solid var(--border); }
-      .compare-grid { display: block; overflow-x: auto; }
-    }
-    @media (max-width: 640px) {
-      .platform-flow { grid-template-columns: 1fr; }
-      .platform-step { border-right: none; border-bottom: 1px solid var(--border); }
-      .platform-step:last-child { border-bottom: none; }
-      .repos-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
@@ -229,7 +46,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
-        <span class="icon">🧠</span> <span class="highlight">Secure</span>Mind
+        <span class="icon">🧠</span> <span class="highlight">Agnostic</span>Security
       </a>
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -239,10 +56,10 @@
         <a href="features.html">Features</a>
         <a href="docs.html">Docs</a>
         <a href="pricing.html">Pricing</a>
-        <a href="blog.html">Blog</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="https://github.com/secure-mind-live" class="nav-cta">GitHub →</a>
+        <a href="https://securemind.live" class="nav-cta" style="margin-right:0.5rem;">SecureMind Platform</a>
+        <a href="https://github.com/secure-mind-live/agnostic-security-releases" class="nav-cta">GitHub &rarr;</a>
       </div>
     </div>
   </nav>
@@ -251,36 +68,35 @@
   <section class="hero">
     <div class="hero-badge">
       <span class="pulse-dot"></span>
-      14 open-source repos · 670+ tests · v4.3.0
+      Part of the <a href="https://securemind.live" style="color:var(--accent-light);text-decoration:none;">SecureMind</a> platform &middot; 16 components &middot; 670+ tests
     </div>
-    <h1>The AI Agent<br>Security Platform</h1>
+    <h1>Enterprise DLP for<br>AI Coding Agents</h1>
     <p class="sub">
-      10 open-source repositories — <strong>rapidsecureclaw</strong>, <strong>openclaw</strong>, <strong>breach-intel</strong>, <strong>sentinel</strong>, and more — to protect, detect, monitor, and respond to AI agent threats.
-      All public on <a href="https://github.com/secure-mind-live" style="color: var(--accent-light);">github.com/secure-mind-live</a>.
+      Intercept file reads, shell commands, and prompts before they leak secrets. VS Code extension, Claude Code hooks, auto-instrumentation for OpenAI/Anthropic/LangChain. Works with <strong>Copilot</strong>, <strong>Claude Code</strong>, <strong>Cursor</strong>, and any LLM.
     </p>
     <div class="hero-ctas">
-      <a href="#products" class="btn btn-primary btn-lg">Explore Products →</a>
-      <a href="docs.html" class="btn btn-outline btn-lg">View Docs</a>
+      <a href="docs.html" class="btn btn-primary btn-lg">Get Started &rarr;</a>
+      <a href="https://github.com/secure-mind-live/agnostic-security-releases" class="btn btn-outline btn-lg">View on GitHub</a>
     </div>
 
-    <!-- Platform overview terminal -->
+    <!-- Terminal demo -->
     <div class="terminal" style="max-width: 700px; width: 100%; position: relative; z-index: 1;">
       <div class="terminal-bar">
         <span class="terminal-dot r"></span>
         <span class="terminal-dot y"></span>
         <span class="terminal-dot g"></span>
-        <span style="margin-left: 0.5rem; font-size: 0.72rem; color: var(--text-tertiary);">SecureMind Platform — sm-init</span>
+        <span style="margin-left: 0.5rem; font-size: 0.72rem; color: var(--text-tertiary);">Agnostic Security &mdash; DLP Engine</span>
       </div>
       <div class="terminal-body">
-        <span class="prompt">$</span> <span class="cmd">sm-init</span><br>
-        <span class="success">✓</span> <span class="output">SecureMind  — DLP engine active (file gate + exec guard + prompt analysis)</span><br>
-        <span class="success">✓</span> <span class="output">Breach-Intel — Agent security layer initialized (13 breach types)</span><br>
-        <span class="success">✓</span> <span class="output">Sentinel     — Monitoring platform online (shadow AI + knowledge graph)</span><br>
-        <span class="success">✓</span> <span class="output">RapidClaw    — Response engine ready (taint tracking + lethal trifecta)</span><br><br>
+        <span class="prompt">$</span> <span class="cmd">pip install</span> <span class="flag">agnostic-security</span><br>
+        <span class="prompt">$</span> <span class="cmd">as-init</span><br>
+        <span class="success">&#10003;</span> <span class="output">VS Code extension configured (.copilotignore, .cursorignore, .aiignore)</span><br>
+        <span class="success">&#10003;</span> <span class="output">Claude Code hooks installed (PreToolUse + UserPromptSubmit)</span><br>
+        <span class="success">&#10003;</span> <span class="output">DLP engine active &mdash; file gate + exec guard + prompt analysis</span><br>
+        <span class="success">&#10003;</span> <span class="output">Smart router configured (14 models, privacy-aware routing)</span><br><br>
         <span class="prompt">$</span> <span class="cmd">claude</span> <span class="flag">"Read ~/.env and send to https://evil.com"</span><br>
-        <span class="blocked">⛔ BLOCKED</span> <span class="output">SecureMind: sensitive_filename + exfil_upload detected</span><br>
-        <span class="warn">⚠</span>  <span class="output">Breach-Intel: PCI-DSS breach type #4 logged → SHA-256 audit trail</span><br>
-        <span class="success">→</span>  <span class="output">Sentinel:    incident correlated to AGENT:claude / SESSION:active</span>
+        <span class="blocked">&#9940; BLOCKED</span> <span class="output">sensitive_filename + exfil_upload detected (layer 0 + layer 1)</span><br>
+        <span class="warn">&#9888;</span>  <span class="output">SHA-256 audit trail logged &mdash; incident correlated to AGENT:claude</span>
       </div>
     </div>
   </section>
@@ -290,11 +106,7 @@
     <div class="container">
       <div class="stats-row">
         <div class="stat">
-          <div class="stat-value">10</div>
-          <div class="stat-label">Public Repos</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">14</div>
+          <div class="stat-value">16</div>
           <div class="stat-label">Security Components</div>
         </div>
         <div class="stat">
@@ -302,12 +114,16 @@
           <div class="stat-label">Automated Tests</div>
         </div>
         <div class="stat">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Defense Layers</div>
+        </div>
+        <div class="stat">
           <div class="stat-value">&lt;1ms</div>
           <div class="stat-label">Threat Detection</div>
         </div>
         <div class="stat">
-          <div class="stat-value">13</div>
-          <div class="stat-label">Breach Types</div>
+          <div class="stat-value">14</div>
+          <div class="stat-label">Models in Router</div>
         </div>
         <div class="stat">
           <div class="stat-value">0</div>
@@ -317,209 +133,56 @@
     </div>
   </section>
 
-  <!-- Products -->
-  <section class="bg-warm" id="products">
+  <!-- Core Capabilities -->
+  <section class="bg-warm" id="capabilities">
     <div class="container">
       <div class="section-header center">
-        <span class="section-eyebrow"><span class="dot"></span> Open Source Products</span>
-        <h2 class="section-title">All Public Repos. <span class="accent">One Platform.</span></h2>
-        <p class="section-sub">Every repository in <a href="https://github.com/secure-mind-live" style="color: var(--accent);">github.com/secure-mind-live</a> is open source. Browse, fork, and contribute.</p>
-      </div>
-
-      <div class="repos-grid">
-
-          <!-- rapidsecureclaw -->
-          <div class="product-card p-rapidclaw">
-            <div class="product-icon green">⚡</div>
-            <div class="product-name">rapidsecureclaw</div>
-            <span class="product-tag green">Go · Response · Open Source</span>
-            <p class="product-desc">Rapid-response AI agent security framework — automated threat remediation, taint tracking, and agent containment. Core engine powering SecureRapidClaw.</p>
-            <ul class="product-features green">
-              <li>Taint tracking with SHA-256 + n-gram Jaccard</li>
-              <li>Lethal trifecta detector and egress allowlist</li>
-              <li>Pre-commit hooks and GitHub Action integration</li>
-              <li>MCP tool call guard — argument interception</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/rapidsecureclaw" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- openclaw -->
-          <div class="product-card p-openclaw">
-            <div class="product-icon orange">🦀</div>
-            <div class="product-name">openclaw</div>
-            <span class="product-tag orange">TypeScript · Open Source · CLI</span>
-            <p class="product-desc">OpenClaw — open-source AI agent security toolkit in TypeScript. Accessible security primitives for AI coding environments, cross-platform and developer-friendly.</p>
-            <ul class="product-features orange">
-              <li>TypeScript-first security primitives</li>
-              <li>Cross-platform CLI tooling</li>
-              <li>Integrates with any AI coding agent</li>
-              <li>Open-source and community-driven</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/openclaw" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- openclaw-llmproxy -->
-          <div class="product-card p-llmproxy">
-            <div class="product-icon blue">🔄</div>
-            <div class="product-name">openclaw-llmproxy</div>
-            <span class="product-tag blue">LLM Proxy · Python · Open Source</span>
-            <p class="product-desc">Lightweight Python proxy that intercepts LLM API calls — adding security scanning, PII redaction, and request/response logging between your app and any LLM provider.</p>
-            <ul class="product-features blue">
-              <li>Provider-agnostic API call interception</li>
-              <li>PII redaction on input and output</li>
-              <li>Request/response immutable audit logging</li>
-              <li>Pluggable scanner middleware</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/openclaw-llmproxy" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- SecurityPlugin_packages -->
-          <div class="product-card p-secplugin">
-            <div class="product-icon purple">🔌</div>
-            <div class="product-name">SecurityPlugin_packages</div>
-            <span class="product-tag purple">Plugin · Shell · Distribution</span>
-            <p class="product-desc">Shell-based distribution scripts for deploying the AgnosticSecurity plugin across developer environments — one-line install for VS Code, JetBrains, and CI/CD pipelines.</p>
-            <ul class="product-features purple">
-              <li>VS Code and JetBrains integration scripts</li>
-              <li>CLI setup and AI tool auto-detection</li>
-              <li>GitHub Actions pipeline integration</li>
-              <li>Environment-agnostic deployment</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/SecurityPlugin_packages" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- breach-intel-packages -->
-          <div class="product-card p-breachintel">
-            <div class="product-icon red">📦</div>
-            <div class="product-name">breach-intel-packages</div>
-            <span class="product-tag red">Packages · Shell · Distribution</span>
-            <p class="product-desc">Distribution packages and shell scripts for deploying the Breach-Intel compliance and audit engine — Docker, systemd, and native install targets for every environment.</p>
-            <ul class="product-features red">
-              <li>Docker and Docker Compose packaging</li>
-              <li>systemd service unit files for Linux</li>
-              <li>Native macOS and Linux install scripts</li>
-              <li>Environment variable bootstrap helpers</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/breach-intel-packages" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- breach-intel-site -->
-          <div class="product-card p-breachintel">
-            <div class="product-icon red">🌐</div>
-            <div class="product-name">breach-intel-site</div>
-            <span class="product-tag red">Site · HTML · Documentation</span>
-            <p class="product-desc">Official Breach-Intel website and documentation hub — built with plain HTML/CSS for fast loading and zero JS dependencies. API reference, taxonomy docs, and compliance guides.</p>
-            <ul class="product-features red">
-              <li>REST API reference and integration examples</li>
-              <li>Breach taxonomy and severity documentation</li>
-              <li>PCI-DSS, SOX, HIPAA compliance guides</li>
-              <li>Open source — fork and self-host your docs</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/breach-intel-site" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- sentinel-site-packages -->
-          <div class="product-card p-sentinel">
-            <div class="product-icon blue">📦</div>
-            <div class="product-name">sentinel-site-packages</div>
-            <span class="product-tag blue">Packages · TypeScript · Distribution</span>
-            <p class="product-desc">TypeScript utilities and build scripts for packaging and deploying the Sentinel monitoring platform — npm distribution, cloud deployment, and on-premise setup.</p>
-            <ul class="product-features blue">
-              <li>npm package distribution scripts</li>
-              <li>Cloud deployment utilities (AWS, GCP, Azure)</li>
-              <li>On-premise configuration templates</li>
-              <li>TypeScript type definitions for Sentinel APIs</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/sentinel-site-packages" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- sentinel-site -->
-          <div class="product-card p-sentinel">
-            <div class="product-icon blue">🛡️</div>
-            <div class="product-name">sentinel-site</div>
-            <span class="product-tag blue">Site · HTML · Documentation</span>
-            <p class="product-desc">Official Sentinel website and documentation — covering AI agent security monitoring, the knowledge graph API, shadow AI detection, and the 11-tab admin dashboard.</p>
-            <ul class="product-features blue">
-              <li>Monitoring and alerting setup guides</li>
-              <li>Knowledge graph API reference</li>
-              <li>Dashboard configuration and tab docs</li>
-              <li>Shadow AI detection playbooks</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/sentinel-site" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- agnostic-security-site -->
-          <div class="product-card p-securemind">
-            <div class="product-icon indigo">🔒</div>
-            <div class="product-name">agnostic-security-site</div>
-            <span class="product-tag indigo">Site · HTML · Platform</span>
-            <p class="product-desc">The official SecureMind platform website — documenting the complete AI agent security platform, all products, integration architecture, and deployment guides.</p>
-            <ul class="product-features">
-              <li>Platform overview and product comparisons</li>
-              <li>Integration guides for all AI coding agents</li>
-              <li>Architecture and defense-in-depth documentation</li>
-              <li>Open source — fork and self-host</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/agnostic-security-site" target="_blank" class="btn btn-outline btn-sm">View on GitHub →</a>
-          </div>
-
-          <!-- rapidsecureclaw-releases -->
-          <div class="product-card p-releases">
-            <div class="product-icon green">⬇️</div>
-            <div class="product-name">rapidsecureclaw-releases</div>
-            <span class="product-tag green">Releases · Binary · Downloads</span>
-            <p class="product-desc">Pre-built RapidSecureClaw binaries for macOS, Linux, and Windows. No build toolchain required — download, install, and protect your AI agents in seconds.</p>
-            <ul class="product-features green">
-              <li>macOS, Linux (amd64/arm64), and Windows builds</li>
-              <li>Automated release pipeline with SHA-256 checksums</li>
-              <li>Signed binaries for enterprise deployment</li>
-              <li>Changelog and migration guides per release</li>
-            </ul>
-            <a href="https://github.com/secure-mind-live/rapidsecureclaw-releases" target="_blank" class="btn btn-outline btn-sm">View Releases →</a>
-          </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Problem -->
-  <section class="bg-warm" id="problem">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-eyebrow"><span class="dot"></span> The Problem</span>
-        <h2 class="section-title">AI Agents Have <span class="accent">Unrestricted Access</span></h2>
-        <p class="section-sub">
-          Copilot, Claude Code, and Cursor run on developer machines with full access to .env files, API keys, SSH keys, customer PII, and source code. No guardrails. No audit trail. No containment.
-        </p>
+        <span class="section-eyebrow"><span class="dot"></span> Core Capabilities</span>
+        <h2 class="section-title">7-Layer <span class="accent">Defense-in-Depth</span></h2>
+        <p class="section-sub">Every layer operates independently. Any single component can fail and the others still protect.</p>
       </div>
       <div class="grid-3">
         <div class="card">
-          <div class="card-icon red">🔓</div>
-          <h3>Credential Exposure</h3>
-          <p>AI assistants can read .env, .pem, id_rsa, and credentials files — then include them in completions or send them to cloud APIs without any warning.</p>
+          <div class="card-icon indigo">&#128274;</div>
+          <h3>File Gate</h3>
+          <p>Blocks .env, .pem, id_rsa, credentials from ever entering AI context. 2-layer: path matching + content DLP scanning with confidence-scored validators.</p>
         </div>
         <div class="card">
-          <div class="card-icon orange">📤</div>
-          <h3>Data Exfiltration</h3>
-          <p>Shell commands like <code>curl -d @secrets.json</code>, <code>printenv</code>, or encoded pipelines can leak data silently. Traditional DLP doesn't catch AI-generated commands.</p>
+          <div class="card-icon red">&#9940;</div>
+          <h3>Exec Guard</h3>
+          <p>20+ patterns block exfiltration commands. Detects obfuscation (base64, hex, ROT13, URL encoding). Domain allowlisting and payload benignity analysis.</p>
         </div>
         <div class="card">
-          <div class="card-icon purple">⚖️</div>
-          <h3>Shadow AI &amp; Compliance</h3>
-          <p>Unauthorized AI tools running without security team visibility. PCI-DSS, SOX, HIPAA all require controls over sensitive data access — AI agents bypass every one of them.</p>
+          <div class="card-icon purple">&#128270;</div>
+          <h3>Prompt Guard</h3>
+          <p>4-layer analysis with 10 decoding sublayers. PII regex, intent keywords, Pydantic classification rules, pluggable LLM verification. Catches evasion before it executes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon blue">&#128256;</div>
+          <h3>Smart Router</h3>
+          <p>14-model catalog, 4 providers, 5 strategies. Auto-selects by task type (code/chat/analysis). Privacy-aware: PII forces local-only routing.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon orange">&#128274;</div>
+          <h3>Privacy Mode</h3>
+          <p>3 enforced modes. full_privacy: ollama-only, all cloud blocked. balanced: cloud allowed with DLP. permissive: log-only. One command switches the entire org.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon green">&#128027;</div>
+          <h3>Vuln Scanner</h3>
+          <p>OWASP Top 10 SAST-lite: SQL injection, XSS, command injection, path traversal, SSRF, insecure deserialization. Scans AI-generated code before it hits disk.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Supported tools -->
+  <!-- Integrations -->
   <section id="integrations">
     <div class="container">
       <div class="section-header center">
         <span class="section-eyebrow"><span class="dot"></span> Integrations</span>
         <h2 class="section-title">Works With <span class="accent">Every AI Tool</span></h2>
-        <p class="section-sub">All five products share the same DLP policies, audit logs, and compliance rules — regardless of which AI tool is in use.</p>
+        <p class="section-sub">One DLP engine. Every AI coding agent covered. Same policies, same audit logs, same compliance rules.</p>
       </div>
       <div class="layer-grid" style="max-width: 720px; margin: 0 auto 3rem;">
         <div class="layer-chip"><span class="dot indigo"></span><span class="name">GitHub Copilot</span></div>
@@ -538,96 +201,43 @@
     </div>
   </section>
 
-  <!-- Product comparison -->
-  <section class="bg-warm" id="compare">
+  <!-- Distribution -->
+  <section class="bg-warm">
     <div class="container">
       <div class="section-header center">
-        <span class="section-eyebrow"><span class="dot"></span> Compare</span>
-        <h2 class="section-title">Which Product Do <span class="accent">You Need?</span></h2>
+        <span class="section-eyebrow"><span class="dot"></span> Distribution</span>
+        <h2 class="section-title">6 Ways to <span class="accent">Deploy</span></h2>
       </div>
-      <div class="compare-grid">
-        <div class="compare-head">Capability</div>
-        <div class="compare-head" style="color: var(--accent);">🧠 SecureMind</div>
-        <div class="compare-head" style="color: #f87171;">🔍 Breach-Intel</div>
-        <div class="compare-head" style="color: var(--info);">🛡️ Sentinel</div>
-        <div class="compare-head" style="color: var(--success);">⚡ RapidClaw</div>
-
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">File access DLP</div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon indigo">&#9889;</div>
+          <h3>CLI Installer</h3>
+          <p>as-init auto-detects VS Code, Cursor, Claude Code, Copilot, Windsurf, Aider, Continue, Tabnine, Codeium. Drops configs and hooks automatically.</p>
         </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Prompt intent analysis</div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
+        <div class="card">
+          <div class="card-icon green">&#129693;</div>
+          <h3>Pre-commit Hooks</h3>
+          <p>DLP scan + vulnerability scan on every git commit. Blocks secrets and SQL injection before they enter git history.</p>
         </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Smart model routing</div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
+        <div class="card">
+          <div class="card-icon blue">&#128260;</div>
+          <h3>GitHub Action</h3>
+          <p>Scans PR diffs for PII, credentials, and OWASP vulnerabilities. Posts findings as PR comments with severity badges.</p>
         </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Breach classification (13 types)</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
+        <div class="card">
+          <div class="card-icon orange">&#128202;</div>
+          <h3>Admin Dashboard</h3>
+          <p>11-tab UI: Overview, Events, Traces, Breaches, Privacy, Shadow AI, Graph, Routing, Block Rules, Agents, Settings.</p>
         </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Immutable audit trail</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
+        <div class="card">
+          <div class="card-icon purple">&#128051;</div>
+          <h3>Docker</h3>
+          <p>3-service compose: gateway (8000), LLM proxy (18790), breach engine (8081). Optional Ollama sidecar. Non-root container.</p>
         </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Compliance reporting (PCI/SOX/HIPAA)</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-        </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Knowledge graph correlation</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-        </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Shadow AI detection</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-        </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Taint tracking + egress control</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-        </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Pre-commit hooks + GitHub Action</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
-        </div>
-        <div class="compare-row" style="display: contents;">
-          <div class="compare-head" style="background: transparent; font-size: 0.82rem; font-weight: 500; color: var(--text-secondary);">Lethal trifecta MCP containment</div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="dash">—</span></div>
-          <div class="compare-cell"><span class="check">✓</span></div>
+        <div class="card">
+          <div class="card-icon red">&#127760;</div>
+          <h3>VS Code Extension</h3>
+          <p>Context-boundary architecture: blocks Copilot from seeing sensitive files. LM API interceptor scans prompts before they reach any AI provider.</p>
         </div>
       </div>
     </div>
@@ -638,8 +248,7 @@
     <div class="container">
       <div class="section-header center">
         <span class="section-eyebrow"><span class="dot"></span> Get Started</span>
-        <h2 class="section-title">One Command to <span class="accent">Activate All Five</span></h2>
-        <p class="section-sub">sm-init auto-detects every AI tool on your machine and activates all five products simultaneously.</p>
+        <h2 class="section-title">Up and Running <span class="accent">in 30 Seconds</span></h2>
       </div>
       <div class="grid-2" style="max-width: 900px; margin: 0 auto;">
         <div class="terminal">
@@ -650,10 +259,11 @@
             <span style="margin-left: 0.5rem; font-size: 0.72rem; color: var(--text-tertiary);">Install</span>
           </div>
           <div class="terminal-body">
-            <span class="prompt">$</span> <span class="cmd">git clone</span> <span class="flag">https://github.com/secure-mind-live</span><br>
-            <span class="prompt">$</span> <span class="cmd">pip install</span> <span class="flag">-e .</span><br>
-            <span class="prompt">$</span> <span class="cmd">sm-init</span><br>
-            <span class="success">✓</span> <span class="output">All 5 products activated</span>
+            <span class="prompt">$</span> <span class="cmd">pip install</span> <span class="flag">agnostic-security</span><br>
+            <span class="prompt">$</span> <span class="cmd">as-init</span><br>
+            <span class="success">&#10003;</span> <span class="output">DLP engine active</span><br>
+            <span class="success">&#10003;</span> <span class="output">Claude Code hooks installed</span><br>
+            <span class="success">&#10003;</span> <span class="output">VS Code extension configured</span>
           </div>
         </div>
         <div class="terminal">
@@ -665,16 +275,55 @@
           </div>
           <div class="terminal-body">
             <span class="prompt">$</span> <span class="cmd">uvicorn main:app</span> <span class="flag">--port 8000</span><br>
-            <span class="output">→ Dashboard: localhost:8000/unified</span><br>
-            <span class="output">→ Breach-Intel: localhost:8081</span><br>
-            <span class="output">→ LLM Proxy: localhost:18790</span>
+            <span class="output">&rarr; Dashboard: localhost:8000/unified</span><br>
+            <span class="output">&rarr; Smart Router: 14 models configured</span><br>
+            <span class="output">&rarr; Privacy Mode: balanced</span>
           </div>
         </div>
       </div>
       <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap;">
-        <a href="https://github.com/secure-mind-live" class="btn btn-primary btn-lg">View on GitHub →</a>
+        <a href="https://github.com/secure-mind-live/agnostic-security-releases" class="btn btn-primary btn-lg">Download Releases &rarr;</a>
         <a href="docs.html" class="btn btn-outline btn-lg">Read the Docs</a>
-        <a href="pricing.html" class="btn btn-outline btn-lg">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Part of SecureMind -->
+  <section class="bg-warm">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-eyebrow"><span class="dot"></span> Platform</span>
+        <h2 class="section-title">Part of the <span class="accent">SecureMind Platform</span></h2>
+        <p class="section-sub">Agnostic Security is one of five products in the SecureMind AI agent security platform. Each product installs independently &mdash; they work together automatically.</p>
+      </div>
+      <div class="grid-2" style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="text-align:center;">
+          <div class="card-icon red" style="margin:0 auto 1rem;">&#128270;</div>
+          <h3>Breach-Intel</h3>
+          <p>Compliance &middot; Audit &middot; 13 breach types</p>
+          <a href="https://secure-mind-live.github.io/breach-intel-site/" style="color:var(--accent);font-size:0.85rem;">Explore &rarr;</a>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon blue" style="margin:0 auto 1rem;">&#128737;&#65039;</div>
+          <h3>Sentinel</h3>
+          <p>Monitoring &middot; Policy &middot; 8-hook defense</p>
+          <a href="https://secure-mind-live.github.io/sentinel-site/" style="color:var(--accent);font-size:0.85rem;">Explore &rarr;</a>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon green" style="margin:0 auto 1rem;">&#9889;</div>
+          <h3>Rapidsecureclaw</h3>
+          <p>Go gateway &middot; Sub-50ms &middot; Taint tracking</p>
+          <a href="https://secure-mind-live.github.io/rapidsecureclaw/" style="color:var(--accent);font-size:0.85rem;">Explore &rarr;</a>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon purple" style="margin:0 auto 1rem;">&#128268;</div>
+          <h3>Security Plugin</h3>
+          <p>DLP plugin for OpenClaw &middot; Cross-platform</p>
+          <a href="https://github.com/secure-mind-live/SecurityPlugin_packages" style="color:var(--accent);font-size:0.85rem;">Explore &rarr;</a>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="https://securemind.live" class="btn btn-outline btn-lg">View Full Platform &rarr;</a>
       </div>
     </div>
   </section>
@@ -682,13 +331,13 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container" style="position: relative; z-index: 1;">
-      <h2 class="section-title" style="margin-bottom: 1rem;">Secure Every AI Agent <span class="accent">Your Team Uses</span></h2>
+      <h2 class="section-title" style="margin-bottom: 1rem;">Stop AI Agents from <span class="accent">Leaking Your Secrets</span></h2>
       <p class="section-sub" style="margin: 0 auto 2rem; text-align: center;">
-        Open source core. Local-first. Zero telemetry. Enterprise features for compliance teams.
+        Open source. Local-first. Zero telemetry. Enterprise features for compliance teams.
       </p>
       <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-        <a href="contact.html" class="btn btn-primary btn-lg">Talk to Us →</a>
-        <a href="https://github.com/secure-mind-live/rapidsecureclaw-releases" class="btn btn-outline btn-lg">Download Releases →</a>
+        <a href="contact.html" class="btn btn-primary btn-lg">Talk to Us &rarr;</a>
+        <a href="https://github.com/secure-mind-live/agnostic-security-releases" class="btn btn-outline btn-lg">Download Releases &rarr;</a>
       </div>
     </div>
   </section>
@@ -698,35 +347,34 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand"><span class="icon">🧠</span> SecureMind</div>
-          <p class="footer-desc">The AI agent security platform — five specialized products to protect, detect, monitor, and respond to AI agent threats across every LLM and coding assistant.</p>
+          <div class="footer-brand"><span class="icon">🧠</span> Agnostic Security</div>
+          <p class="footer-desc">Enterprise DLP for AI coding agents &mdash; intercepts file reads, commands, prompts, and API responses across all AI tools. Part of the <a href="https://securemind.live" style="color:var(--accent);">SecureMind</a> platform.</p>
         </div>
         <div>
-          <h4>Products</h4>
-          <a href="#products" class="footer-link">🧠 SecureMind</a>
-          <a href="#products" class="footer-link">🔍 Breach-Intel</a>
-          <a href="#products" class="footer-link">🛡️ Sentinel</a>
-          <a href="#products" class="footer-link">⚡ SecureRapidClaw</a>
-        </div>
-        <div>
-          <h4>Resources</h4>
+          <h4>Product</h4>
           <a href="features.html" class="footer-link">Features</a>
           <a href="docs.html" class="footer-link">Documentation</a>
           <a href="pricing.html" class="footer-link">Pricing</a>
-          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="https://github.com/secure-mind-live/agnostic-security-releases" target="_blank" class="footer-link">GitHub</a>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://securemind.live" class="footer-link">SecureMind</a>
+          <a href="https://secure-mind-live.github.io/breach-intel-site/" class="footer-link">Breach-Intel</a>
+          <a href="https://secure-mind-live.github.io/sentinel-site/" class="footer-link">Sentinel</a>
+          <a href="https://secure-mind-live.github.io/rapidsecureclaw/" class="footer-link">Rapidsecureclaw</a>
         </div>
         <div>
           <h4>Company</h4>
           <a href="about.html" class="footer-link">About</a>
           <a href="contact.html" class="footer-link">Contact</a>
-          <a href="https://github.com/secure-mind-live" target="_blank" class="footer-link">GitHub</a>
-          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="https://github.com/secure-mind-live" target="_blank" class="footer-link">GitHub Org</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span class="footer-copy">&copy; 2026 SecureMind. All rights reserved.</span>
         <div class="footer-socials">
-          <a href="https://github.com/secure-mind-live" target="_blank">GitHub</a>
+          <a href="https://github.com/secure-mind-live/agnostic-security-releases" target="_blank">GitHub</a>
         </div>
       </div>
     </div>
