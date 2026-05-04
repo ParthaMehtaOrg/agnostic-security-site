@@ -62,9 +62,9 @@
           <h3>One-Command Setup</h3>
           <div class="terminal" style="margin:0.5rem 0"><div class="terminal-body" style="padding:0.8rem">
             <span class="prompt">$</span> <span class="cmd">git clone</span> <span class="flag">https://github.com/secure-mind-live/agnostic-security-releases.git</span><br>
-            <span class="prompt">$</span> <span class="cmd">cd</span> SecureMind<br>
+            <span class="prompt">$</span> <span class="cmd">cd</span> agnostic-security-releases<br>
             <span class="prompt">$</span> <span class="cmd">pip install</span> <span class="flag">-e .</span><br>
-            <span class="prompt">$</span> <span class="cmd">sm-init</span><br>
+            <span class="prompt">$</span> <span class="cmd">as-init</span><br>
             <span class="success">✓</span> <span class="output">Detected: Claude Code, VS Code, Cursor</span><br>
             <span class="success">✓</span> <span class="output">Configured protections for all tools</span>
           </div></div>
@@ -144,6 +144,20 @@
         </tbody>
       </table></div>
 
+      <h3 style="margin: 2rem 0 1rem;">Admin Console</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>GET</code></td><td><code>/api/v1/policies</code></td><td>List all policies with version history</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/v1/policies</code></td><td>Create or update a policy (auto-versioned)</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/v1/agents/register</code></td><td>Register a new agent (returns enrollment token)</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/v1/agents/{id}/approve</code></td><td>Approve a pending agent</td></tr>
+          <tr><td><code>POST</code></td><td><code>/api/v1/agents/{id}/revoke</code></td><td>Revoke an agent's access</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/v1/events</code></td><td>Query cross-agent event stream</td></tr>
+          <tr><td><code>GET</code></td><td><code>/api/v1/dashboard</code></td><td>Org-wide summary aggregation</td></tr>
+        </tbody>
+      </table></div>
+
       <h3 style="margin: 2rem 0 1rem;">Gateway Core</h3>
       <div class="table-wrap"><table>
         <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
@@ -173,7 +187,7 @@
         <span class="prompt">$</span> python3 scripts/test_smart_router.py <span class="success"># 53 PASS</span><br><br>
         <span class="output"># Core + red team (216 tests)</span><br>
         <span class="prompt">$</span> python3 scripts/smoke_test.py <span class="success"># 31 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_red_team.py <span class="success"># 46 PASS (adversarial)</span><br>
+        <span class="prompt">$</span> python3 scripts/test_red_team.py <span class="success"># 52 PASS (adversarial, 274 attack techniques)</span><br>
         <span class="prompt">$</span> <span class="output">... and 8 more test suites</span>
       </div></div>
     </div>
@@ -197,7 +211,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><div class="footer-brand"><span class="icon">🧠</span> SecureMind</div><p class="footer-desc">Enterprise DLP for AI coding agents — 14 components, intelligent routing, and 6 distribution channels.</p></div>
+        <div><div class="footer-brand"><span class="icon">🧠</span> SecureMind</div><p class="footer-desc">Enterprise DLP for AI coding agents — 16 components, intelligent routing, and 6 distribution channels.</p></div>
         <div><h4>Products</h4><a href="features.html" class="footer-link">Features</a><a href="pricing.html" class="footer-link">Pricing</a><a href="docs.html" class="footer-link">Docs</a><a href="https://github.com/secure-mind-live/agnostic-security-releases" target="_blank" class="footer-link">GitHub</a></div>
         <div><h4>Company</h4><a href="about.html" class="footer-link">About</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div>
         <div><h4>Legal</h4><a href="#" class="footer-link">Privacy Policy</a><a href="#" class="footer-link">Terms of Service</a><a href="#" class="footer-link">Security</a></div>
