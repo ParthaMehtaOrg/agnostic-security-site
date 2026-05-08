@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Features — SecureMind | 21 AI Security Components</title>
-  <meta name="description" content="Explore all 21 security components: DLP scanning, intelligent model routing, privacy mode, pre-commit hooks, secret detection, and more. Works with any AI coding assistant.">
+  <title>Features — SecureMind | 25 AI Security Components</title>
+  <meta name="description" content="Explore all 25 security components: DLP scanning, intelligent model routing, enterprise privacy, Terminal Guard, India PII detection, and more. Works with any AI coding assistant.">
   <meta name="keywords" content="AI agent DLP features, intelligent routing, privacy mode, pre-commit hooks, secret detection, LLM security components, AI coding assistant protection">
   <meta name="author" content="SecureMind">
   <meta name="robots" content="index, follow">
@@ -12,13 +12,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://securemind.live/features.html">
   <meta property="og:site_name" content="SecureMind">
-  <meta property="og:title" content="Features — SecureMind | 21 AI Security Components">
-  <meta property="og:description" content="Explore all 21 security components: DLP scanning, intelligent model routing, privacy mode, pre-commit hooks, secret detection, and more.">
+  <meta property="og:title" content="Features — SecureMind | 25 AI Security Components">
+  <meta property="og:description" content="Explore all 25 security components: DLP scanning, intelligent model routing, enterprise privacy, Terminal Guard, India PII detection, and more.">
   <meta property="og:image" content="https://securemind.live/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@securemindlive">
-  <meta name="twitter:title" content="Features — SecureMind | 21 AI Security Components">
-  <meta name="twitter:description" content="Explore all 21 security components: DLP scanning, intelligent routing, privacy mode, pre-commit hooks, secret detection, and more.">
+  <meta name="twitter:title" content="Features — SecureMind | 25 AI Security Components">
+  <meta name="twitter:description" content="Explore all 25 security components: DLP scanning, intelligent routing, enterprise privacy, Terminal Guard, India PII detection, and more.">
   <meta name="twitter:image" content="https://securemind.live/og-image.png">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,8 +47,8 @@
   <section style="padding-top: 6rem;">
     <div class="container">
       <div class="section-header center">
-        <span class="section-eyebrow"><span class="dot"></span> Platform Features · v4.12.0</span>
-        <h2 class="section-title">16 Security Components, <span class="accent">Zero Gaps</span></h2>
+        <span class="section-eyebrow"><span class="dot"></span> Platform Features · v4.22.0</span>
+        <h2 class="section-title">25 Security Components, <span class="accent">Zero Gaps</span></h2>
         <p class="section-sub">Features span all five products — SecureMind, Breach-Intel, Sentinel, Rapidsecureclaw, and Security Plugin. Every layer operates independently; any single component can fail and the others still protect.</p>
       </div>
       <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
@@ -79,7 +79,7 @@
   <!-- v4.12.0 Modules -->
   <section>
     <div class="container">
-      <div class="section-header"><h2 class="section-title">v4.12.0 <span class="accent">New Modules</span></h2></div>
+      <div class="section-header"><h2 class="section-title">v4.22.0 <span class="accent">Modules</span></h2></div>
       <div class="grid-3">
         <div class="card"><div class="card-icon red">🔍</div><h3>Vulnerability Scanner</h3><p>OWASP Top 10 SAST-lite — SQL injection (CWE-89), XSS (CWE-79), command injection (CWE-78), path traversal, SSRF, insecure deserialization, hardcoded secrets. Integrated into Write/Edit hook.</p></div>
         <div class="card"><div class="card-icon orange">🔀</div><h3>Smart Router</h3><p>14-model catalog across 4 providers. Task classifier detects code/chat/analysis/creative/math/simple. 5 strategies: auto, cheapest, fastest, best_quality, local_only. Failover across providers.</p></div>
@@ -91,6 +91,11 @@
         <div class="card"><div class="card-icon red">⚡</div><h3>Lethal Trifecta</h3><p>Simon Willison pattern — tracks private data access + untrusted input + external comm. When all 3 active, blocks MCP tools with network capabilities. State persisted.</p></div>
         <div class="card"><div class="card-icon purple">🛡️</div><h3>Tool Call Guard</h3><p>MCP tool calls and function invocations intercepted. Arguments scanned through DLP + taint registry. Blocks exfiltration through the agent's own tools.</p></div>
         <div class="card"><div class="card-icon indigo">🏛️</div><h3>Admin Console</h3><p>Centralized policy management with versioning, agent enrollment (register/approve/revoke), cross-agent event ingestion, org-wide dashboard. 14 API endpoints, RBAC with 4 roles.</p></div>
+        <div class="card"><div class="card-icon cyan">🖥️</div><h3>Terminal Guard v4</h3><p>Auto-detects AI agents by process ancestry (PPID tree walking). Input cadence detection distinguishes AI bursts from human typing. Bash + zsh support. Humans never blocked.</p></div>
+        <div class="card"><div class="card-icon green">🏢</div><h3>Enterprise Privacy</h3><p>Org-wide policy push with per-team overrides. Scheduled mode changes (e.g., full_privacy during market hours). Audit trail with actor/timestamp/reason. Webhook alerts.</p></div>
+        <div class="card"><div class="card-icon blue">🔗</div><h3>DLP-Breach Bridge</h3><p>DLP blocks and PII redactions auto-emit breach events. 6 event types with severity levels. SHA-256 dedup. Fire-and-forget — zero latency impact on the DLP path.</p></div>
+        <div class="card"><div class="card-icon orange">🛡️</div><h3>Gateway Hardening</h3><p>Base64 decode layer for encoded payloads. Credential detection in API requests. Multi-step exfiltration chain detection. Blocks attacks that evade surface-level scanning.</p></div>
+        <div class="card"><div class="card-icon purple">📊</div><h3>Unified Dashboard</h3><p>Single-port access at :8000. Gateway proxies breach engine automatically. DLP blocks, breach classifications, PII detections, routing — all from one URL.</p></div>
       </div>
     </div>
   </section>
@@ -105,15 +110,15 @@
         <div class="card"><div class="card-icon blue">🔄</div><h3>GitHub Action</h3><p>Scans PR diffs for PII, credentials, and OWASP vulnerabilities. Posts findings as PR comments with severity badges. One workflow file covers the entire org.</p></div>
         <div class="card"><div class="card-icon orange">📊</div><h3>Admin Dashboard</h3><p>11-tab React UI: Overview, Events, Traces, Breaches, Privacy, Shadow AI, Graph, Routing, Block Rules, Agents, Settings. Real-time SSE updates.</p></div>
         <div class="card"><div class="card-icon purple">🐳</div><h3>Docker</h3><p>3-service compose: gateway (8000), LLM proxy (18790), breach engine (8081). Optional Ollama sidecar. Non-root container, capability-dropped.</p></div>
-        <div class="card"><div class="card-icon red">🌐</div><h3>Chrome Extension</h3><p>Client-side DLP for ChatGPT, Claude, Gemini web UIs. Blocks PII before it reaches any cloud AI service. File upload interception + clipboard paste scanning.</p></div>
+        <div class="card"><div class="card-icon red">🌐</div><h3>Chrome Extension</h3><p>Client-side DLP for ChatGPT, Claude, Gemini, Grok, Perplexity, DeepSeek, Meta AI, HuggingChat. Blocks PII before it reaches any cloud AI. India PII: Aadhaar, PAN Card, Indian phone.</p></div>
       </div>
     </div>
   </section>
 
   <section class="cta-section">
     <div class="container" style="position:relative;z-index:1">
-      <h2 class="section-title" style="margin-bottom:1rem">724+ Tests, <span class="accent">Zero Gaps</span></h2>
-      <p class="section-sub" style="margin:0 auto 2rem;text-align:center">Including 274 red-team attack techniques, 55-agent Docker harness (100% detection), 54-test ingress guard suite, 53-test smart router suite, and PII evasion eval with 10 encoding variants.</p>
+      <h2 class="section-title" style="margin-bottom:1rem">856+ Tests, <span class="accent">Zero Gaps</span></h2>
+      <p class="section-sub" style="margin:0 auto 2rem;text-align:center">Including 274 red-team attack techniques, 55-agent Docker harness (100% detection), 54-test ingress guard suite, 53-test smart router suite, Terminal Guard test suite, and PII evasion eval with 10 encoding variants.</p>
       <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap">
         <a href="https://github.com/secure-mind-live/agnostic-security-releases" class="btn btn-primary btn-lg">View on GitHub →</a>
         <a href="docs.html" class="btn btn-outline btn-lg">Read the Docs</a>
@@ -124,7 +129,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><div class="footer-brand"><span class="icon">🧠</span> SecureMind</div><p class="footer-desc">Enterprise DLP for AI coding agents — 21 components, intelligent routing, and 6 distribution channels.</p></div>
+        <div><div class="footer-brand"><span class="icon">🧠</span> SecureMind</div><p class="footer-desc">Enterprise DLP for AI coding agents — 25 components, intelligent routing, and 6 distribution channels.</p></div>
         <div><h4>Products</h4><a href="features.html" class="footer-link">Features</a><a href="pricing.html" class="footer-link">Pricing</a><a href="docs.html" class="footer-link">Docs</a><a href="https://github.com/secure-mind-live/agnostic-security-releases" target="_blank" class="footer-link">GitHub</a></div>
         <div><h4>Company</h4><a href="about.html" class="footer-link">About</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div>
         <div><h4>Legal</h4><a href="#" class="footer-link">Privacy Policy</a><a href="#" class="footer-link">Terms of Service</a><a href="#" class="footer-link">Security</a></div>

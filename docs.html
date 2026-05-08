@@ -158,6 +158,25 @@
         </tbody>
       </table></div>
 
+      <h3 style="margin: 2rem 0 1rem;">Enterprise Privacy</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>GET</code></td><td><code>/privacy/effective</code></td><td>Get effective privacy mode for a team (resolves org → team hierarchy)</td></tr>
+          <tr><td><code>POST</code></td><td><code>/privacy/org</code></td><td>Push org-wide privacy policy with per-team overrides</td></tr>
+          <tr><td><code>GET</code></td><td><code>/privacy/audit</code></td><td>Query privacy policy change audit trail</td></tr>
+          <tr><td><code>POST</code></td><td><code>/privacy/schedule</code></td><td>Schedule privacy mode changes (cron + timezone)</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3 style="margin: 2rem 0 1rem;">Ingress Guard</h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>GET</code></td><td><code>/ingress/stats</code></td><td>Ingress guard stats — blocked, throttled, allowed counts, top risk IPs</td></tr>
+        </tbody>
+      </table></div>
+
       <h3 style="margin: 2rem 0 1rem;">Gateway Core</h3>
       <div class="table-wrap"><table>
         <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
@@ -173,10 +192,10 @@
   <!-- Test Suite -->
   <section class="bg-warm">
     <div class="container">
-      <div class="section-header"><h2 class="section-title">724+ <span class="accent">Tests</span></h2></div>
+      <div class="section-header"><h2 class="section-title">856+ <span class="accent">Tests</span></h2></div>
       <div class="terminal"><div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span></div>
       <div class="terminal-body">
-        <span class="output"># v4.12.0 modules (724+ tests across 24 suites)</span><br>
+        <span class="output"># v4.22.0 modules (856+ tests across 26 suites)</span><br>
         <span class="prompt">$</span> python3 scripts/test_privacy_mode.py <span class="success"># 28 PASS</span><br>
         <span class="prompt">$</span> python3 scripts/test_knowledge_graph.py <span class="success"># 33 PASS</span><br>
         <span class="prompt">$</span> python3 scripts/test_vuln_scanner.py <span class="success"># 45 PASS</span><br>
@@ -212,7 +231,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><div class="footer-brand"><span class="icon">🧠</span> SecureMind</div><p class="footer-desc">Enterprise DLP for AI coding agents — 21 components, intelligent routing, and 6 distribution channels.</p></div>
+        <div><div class="footer-brand"><span class="icon">🧠</span> SecureMind</div><p class="footer-desc">Enterprise DLP for AI coding agents — 25 components, intelligent routing, and 6 distribution channels.</p></div>
         <div><h4>Products</h4><a href="features.html" class="footer-link">Features</a><a href="pricing.html" class="footer-link">Pricing</a><a href="docs.html" class="footer-link">Docs</a><a href="https://github.com/secure-mind-live/agnostic-security-releases" target="_blank" class="footer-link">GitHub</a></div>
         <div><h4>Company</h4><a href="about.html" class="footer-link">About</a><a href="blog.html" class="footer-link">Blog</a><a href="contact.html" class="footer-link">Contact</a></div>
         <div><h4>Legal</h4><a href="#" class="footer-link">Privacy Policy</a><a href="#" class="footer-link">Terms of Service</a><a href="#" class="footer-link">Security</a></div>
