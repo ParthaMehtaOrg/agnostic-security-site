@@ -256,6 +256,52 @@
     </div>
   </section>
 
+  <!-- Red Team -->
+  <section id="redteam">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-eyebrow"><span class="dot"></span> Battle-Tested</span>
+        <h2 class="section-title">55-Agent <span class="accent">Red Team Harness</span></h2>
+        <p class="section-sub">Isolated Docker network. Real attacks. Real detection. 100% catch rate.</p>
+      </div>
+      <div class="grid-2" style="max-width:1000px;margin:0 auto">
+        <div class="terminal">
+          <div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span><span style="margin-left:0.5rem;font-size:0.72rem;color:var(--text-tertiary)">Attacker (172.30.0.20)</span></div>
+          <div class="terminal-body">
+            <span class="prompt">$</span> <span class="cmd">docker compose -f</span> docker-compose.redteam.yml <span class="flag">up --build -d</span><br>
+            <span class="prompt">$</span> <span class="cmd">docker exec</span> agsec-attacker <span class="flag">python3 /agents/run_all.py</span><br><br>
+            <span class="output">RESULTS: 84/84 detected (100.0%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Prompt/Instruction &nbsp; 6/6 &nbsp;(100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Tool/Command Abuse &nbsp; 7/7 &nbsp;(100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Data Leakage &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5/5 &nbsp;(100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Memory/Context &nbsp;&nbsp;&nbsp;&nbsp; 5/5 &nbsp;(100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Multi-Agent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5/5 &nbsp;(100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Infrastructure &nbsp;&nbsp;&nbsp;&nbsp; 6/6 &nbsp;(100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">Fuzzing/Stress &nbsp;&nbsp;&nbsp;&nbsp; 19/19 (100%)</span><br>
+            <span class="success">&#10004;</span> <span class="output">All 10 OWASP categories covered</span>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:1rem">
+            <div class="card-icon red">&#9760;</div>
+            <h3>Real Attacks, Not Simulations</h3>
+            <p>55 attack agents across 10 OWASP categories run inside an isolated Docker network. Attacker container sends real payloads. Defender container runs gateway + breach engine + DLP. Every attack is classified with breach type and severity.</p>
+          </div>
+          <div class="card" style="margin-bottom:1rem">
+            <div class="card-icon green">&#128202;</div>
+            <h3>12 Breach Types Classified</h3>
+            <p>UNAUTHORIZED_ACCESS, PII_EXPOSURE, DATA_EXFILTRATION, PRIVILEGE_ESCALATION, CROSS_TENANT_LEAK, SCOPE_CREEP, REGULATORY_VIOLATION, CARD_DATA_EXPOSURE, and more. Each event logged with severity (CRITICAL/HIGH/MEDIUM).</p>
+          </div>
+          <div class="card">
+            <div class="card-icon blue">&#128640;</div>
+            <h3>Run It Yourself</h3>
+            <p><code>docker compose -f docker-compose.redteam.yml up --build -d</code> then <code>docker exec agsec-attacker python3 /agents/run_all.py</code>. Results on dashboard at <code>localhost:8000/unified</code>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Quick Start -->
   <section id="install">
     <div class="container">
