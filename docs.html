@@ -3,28 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation — SecureMind | Integration Guide</title>
-  <meta name="description" content="Complete documentation for SecureMind. Install and configure DLP protection for Copilot, Claude Code, Cursor, Windsurf, LangChain, Autogen, and any LLM provider.">
-  <meta name="keywords" content="SecureMind docs, DLP integration guide, AI agent security setup, Claude Code hooks, Copilot security, Cursor security, LangChain DLP">
+  <title>Documentation — AgnosticSecurity | Integration Guide</title>
+  <meta name="description" content="Complete documentation for AgnosticSecurity. Install and configure DLP protection for Copilot, Claude Code, Cursor, Windsurf, LangChain, Autogen, and any LLM provider.">
+  <meta name="keywords" content="AgnosticSecurity docs, DLP integration guide, AI agent security setup, Claude Code hooks, Copilot security, Cursor security, LangChain DLP">
   <meta name="author" content="SecureMind">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://securemind.live/docs.html">
+  <link rel="canonical" href="https://secure-mind-live.github.io/agnostic-security-site/docs.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://securemind.live/docs.html">
+  <meta property="og:url" content="https://secure-mind-live.github.io/agnostic-security-site/docs.html">
   <meta property="og:site_name" content="SecureMind">
-  <meta property="og:title" content="Documentation — SecureMind | Integration Guide">
-  <meta property="og:description" content="Complete documentation for SecureMind. Install and configure DLP protection for Copilot, Claude Code, Cursor, Windsurf, LangChain, and more.">
-  <meta property="og:image" content="https://securemind.live/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@securemindlive">
-  <meta name="twitter:title" content="Documentation — SecureMind | Integration Guide">
-  <meta name="twitter:description" content="Install and configure DLP protection for Copilot, Claude Code, Cursor, Windsurf, LangChain, and any LLM provider.">
-  <meta name="twitter:image" content="https://securemind.live/og-image.png">
+  <meta property="og:title" content="Documentation — AgnosticSecurity">
+  <meta property="og:description" content="Complete documentation for AgnosticSecurity. Install and configure DLP protection for AI coding agents.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .docs-layout { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 6rem 1.5rem 4rem; }
+    .docs-sidebar { position: sticky; top: 5rem; height: fit-content; max-height: calc(100vh - 6rem); overflow-y: auto; padding-right: 1rem; }
+    .docs-sidebar::-webkit-scrollbar { width: 3px; }
+    .docs-sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    .docs-nav-group { margin-bottom: 1.5rem; }
+    .docs-nav-group h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem; font-weight: 700; }
+    .docs-nav-group a { display: block; font-size: 0.82rem; color: var(--text-secondary, #8b949e); text-decoration: none; padding: 0.25rem 0 0.25rem 0.75rem; border-left: 2px solid transparent; transition: all 0.15s; }
+    .docs-nav-group a:hover, .docs-nav-group a.active { color: var(--accent); border-left-color: var(--accent); }
+    .docs-content section { margin-bottom: 3rem; scroll-margin-top: 5.5rem; }
+    .docs-content h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+    .docs-content h3 { font-size: 1rem; margin: 1.5rem 0 0.75rem; color: var(--text-secondary, #8b949e); }
+    @media (max-width: 768px) {
+      .docs-layout { grid-template-columns: 1fr; }
+      .docs-sidebar { display: none; }
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
@@ -44,189 +55,391 @@
     </div>
   </nav>
 
-  <section style="padding-top: 6rem;">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-eyebrow"><span class="dot"></span> Documentation</span>
-        <h2 class="section-title">Quick Start &amp; <span class="accent">API Reference</span></h2>
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="docs-nav-group">
+        <h4>Getting Started</h4>
+        <a href="#quick-start">Quick Start (as-init)</a>
+        <a href="#gateway">Gateway Setup</a>
+        <a href="#docker">Docker Compose</a>
+        <a href="#ports">Service Ports</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Quick Start -->
-  <section class="bg-warm">
-    <div class="container">
-      <div class="section-header"><h2 class="section-title">Quick <span class="accent">Start</span></h2></div>
-      <div class="grid-2">
-        <div class="card">
-          <h3>One-Command Setup</h3>
-          <div class="terminal" style="margin:0.5rem 0"><div class="terminal-body" style="padding:0.8rem">
-            <span class="prompt">$</span> <span class="cmd">git clone</span> <span class="flag">https://github.com/secure-mind-live/agnostic-security-releases.git</span><br>
-            <span class="prompt">$</span> <span class="cmd">cd</span> agnostic-security-releases<br>
-            <span class="prompt">$</span> <span class="cmd">pip install</span> <span class="flag">-e .</span><br>
-            <span class="prompt">$</span> <span class="cmd">as-init</span><br>
-            <span class="success">✓</span> <span class="output">Detected: Claude Code, VS Code, Cursor</span><br>
-            <span class="success">✓</span> <span class="output">Configured protections for all tools</span>
-          </div></div>
-        </div>
-        <div class="card">
-          <h3>Start the Gateway</h3>
-          <div class="terminal" style="margin:0.5rem 0"><div class="terminal-body" style="padding:0.8rem">
-            <span class="prompt">$</span> <span class="cmd">source</span> .venv/bin/activate<br>
-            <span class="prompt">$</span> <span class="cmd">uvicorn</span> main:app <span class="flag">--port 8000</span><br>
-            <span class="output">Dashboard: http://localhost:8000/unified</span><br>
-            <span class="output">API docs:  http://localhost:8000/docs</span>
-          </div></div>
-        </div>
+      <div class="docs-nav-group">
+        <h4>IDE Integration</h4>
+        <a href="#vscode">VS Code Extension</a>
+        <a href="#cursor">Cursor / Windsurf</a>
+        <a href="#chrome">Chrome Extension</a>
+        <a href="#hooks">Claude Code Hooks</a>
       </div>
+      <div class="docs-nav-group">
+        <h4>API Reference</h4>
+        <a href="#api-gateway">Chat Completions</a>
+        <a href="#api-routing">Smart Routing</a>
+        <a href="#api-privacy">Privacy Mode</a>
+        <a href="#api-dlp">DLP Controls</a>
+        <a href="#api-redaction">Redaction Policy</a>
+        <a href="#api-ingress">Ingress Guard</a>
+        <a href="#api-shadow">Shadow AI</a>
+        <a href="#api-graph">Knowledge Graph</a>
+        <a href="#api-rules">Block Rules</a>
+        <a href="#api-taxonomy">Taxonomy</a>
+      </div>
+      <div class="docs-nav-group">
+        <h4>Enterprise</h4>
+        <a href="#rbac">RBAC (7 Roles)</a>
+        <a href="#enterprise-privacy">Per-Team Privacy</a>
+        <a href="#admin-console">Admin Console</a>
+        <a href="#breach-engine">Breach Engine</a>
+      </div>
+      <div class="docs-nav-group">
+        <h4>Red Team &amp; Eval</h4>
+        <a href="#redteam-docker">Docker Harness (55 agents)</a>
+        <a href="#redteam-browser">Browser Demo (/redteam)</a>
+        <a href="#tests">Test Suites (1,051)</a>
+      </div>
+      <div class="docs-nav-group">
+        <h4>Reference</h4>
+        <a href="#env-vars">Environment Variables</a>
+        <a href="#compliance">Compliance (OWASP/NIST)</a>
+        <a href="#architecture">Architecture (25 components)</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="docs-content">
+
+      <!-- Getting Started -->
+      <section id="quick-start">
+        <h2>Quick <span class="accent">Start</span></h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>One-Command Setup</h3>
+            <div class="terminal" style="margin:0.5rem 0"><div class="terminal-body" style="padding:0.8rem">
+              <span class="prompt">$</span> <span class="cmd">pip install</span> <span class="flag">securityagent-core</span><br>
+              <span class="prompt">$</span> <span class="cmd">as-init</span><br>
+              <span class="success">&#10003;</span> <span class="output">Detected: Claude Code, VS Code, Cursor</span><br>
+              <span class="success">&#10003;</span> <span class="output">Configured protections for all tools</span>
+            </div></div>
+          </div>
+          <div class="card" id="gateway">
+            <h3>Start the Gateway</h3>
+            <div class="terminal" style="margin:0.5rem 0"><div class="terminal-body" style="padding:0.8rem">
+              <span class="prompt">$</span> <span class="cmd">source</span> .venv/bin/activate<br>
+              <span class="prompt">$</span> <span class="cmd">uvicorn</span> main:app <span class="flag">--port 8000</span><br>
+              <span class="output">Dashboard: http://localhost:8000/unified</span><br>
+              <span class="output">Red Team:  http://localhost:8000/redteam</span>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="docker">
+        <h3>Docker Compose</h3>
+        <div class="terminal"><div class="terminal-body" style="padding:0.8rem">
+          <span class="prompt">$</span> <span class="cmd">docker compose up</span> <span class="flag">-d</span><br>
+          <span class="success">&#10003;</span> <span class="output">Gateway :8000, Breach Engine :8081, LLM Proxy :18790</span>
+        </div></div>
+      </section>
+
+      <section id="ports">
+        <h3>Service Ports</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Service</th><th>Port</th><th>Start Command</th></tr></thead>
+          <tbody>
+            <tr><td>API Gateway + Dashboard</td><td>8000</td><td><code>uvicorn main:app --port 8000</code></td></tr>
+            <tr><td>LLM Proxy</td><td>18790</td><td><code>python3 llm/llm_proxy.py --port 18790</code></td></tr>
+            <tr><td>Breach Engine</td><td>8081</td><td><code>uvicorn breach_intel.main:app --port 8081</code></td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <!-- IDE Integration -->
+      <section id="vscode">
+        <h2>IDE <span class="accent">Integration</span></h2>
+        <h3>VS Code Extension</h3>
+        <div class="terminal"><div class="terminal-body" style="padding:0.8rem">
+          <span class="prompt">$</span> <span class="cmd">code --install-extension</span> agnostic-security-4.30.0.vsix<br>
+          <span class="success">&#10003;</span> <span class="output">Extension installed — status bar: "Data Protected from AI"</span>
+        </div></div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-secondary,#8b949e)">Context boundary architecture: AI tools cannot read sensitive file content. Files remain visible in Explorer and fully editable by developers. 10 defense layers including .copilotignore, search.exclude, LM API interceptor, Terminal Guard v4.</p>
+      </section>
+
+      <section id="cursor">
+        <h3>Cursor / Windsurf / VSCodium</h3>
+        <div class="terminal"><div class="terminal-body" style="padding:0.8rem">
+          <span class="prompt">$</span> <span class="cmd">cursor --install-extension</span> agnostic-security-4.30.0.vsix<br>
+          <span class="output">Or install from Open VSX marketplace</span>
+        </div></div>
+      </section>
+
+      <section id="chrome">
+        <h3>Chrome Extension</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary,#8b949e)">Covers 12 LLM web UIs: Claude, ChatGPT, Gemini, AI Studio, Copilot, Grok, Perplexity, DeepSeek, Meta AI, HuggingChat. Consent modal for critical PII with per-finding redact/mask/block/allow choices.</p>
+      </section>
+
+      <section id="hooks">
+        <h3>Claude Code Hooks</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary,#8b949e)">Configured automatically by <code>as-init</code>. Intercepts PreToolUse (Read/Edit/Write/Bash) and UserPromptSubmit. 4-layer prompt analysis: PII regex scan, intent keywords, Pydantic rules, Ollama LLM.</p>
+      </section>
+
+      <!-- API Reference -->
+      <section id="api-gateway">
+        <h2>API <span class="accent">Reference</span></h2>
+        <h3>Gateway Core</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>POST</code></td><td><code>/v1/chat/completions</code></td><td>Secure chat completions proxy (OpenAI-compatible). Use model: "auto" for smart routing.</td></tr>
+            <tr><td><code>GET</code></td><td><code>/health</code></td><td>Liveness probe</td></tr>
+            <tr><td><code>GET</code></td><td><code>/v1/audit</code></td><td>Query audit log entries</td></tr>
+            <tr><td><code>GET</code></td><td><code>/dashboard-stats</code></td><td>Dashboard metrics (events, blocks, PII, latency)</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-routing">
+        <h3>Smart Routing</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/routing/models</code></td><td>List all 14 models with capabilities, costs, speed, coding/reasoning scores</td></tr>
+            <tr><td><code>GET</code></td><td><code>/routing/stats</code></td><td>Per-provider request counts, latency (avg/p95), cost, failure rates</td></tr>
+            <tr><td><code>POST</code></td><td><code>/routing/config?strategy=X</code></td><td>Change strategy: auto/cheapest/fastest/best_quality/local_only</td></tr>
+            <tr><td><code>GET</code></td><td><code>/routing/explain?prompt=X</code></td><td>Dry run — shows which model would be selected and why</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-privacy">
+        <h3>Privacy Mode</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/privacy</code></td><td>Current mode, cloud_llm_blocked, allowed_providers</td></tr>
+            <tr><td><code>POST</code></td><td><code>/privacy?mode=X</code></td><td>Set: full_privacy (local only), balanced, permissive</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-dlp">
+        <h3>DLP Controls</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/dlp/controls</code></td><td>Per-type enable/block/confidence settings</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/dlp/controls</code></td><td>Update all DLP controls</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/dlp/controls/type/{name}</code></td><td>Update single type (SSN, CC, Aadhaar, etc.)</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/dlp/controls/domains</code></td><td>Set egress domain allowlist</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-redaction">
+        <h3>Smart Redaction</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/dlp/redaction-policy</code></td><td>Per-type mode: block / redact / mask / allow</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/dlp/redaction-policy</code></td><td>Update redaction policy</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/dlp/redaction-policy/type/{name}</code></td><td>Set mode for single type</td></tr>
+            <tr><td><code>GET</code></td><td><code>/dlp/redaction-stats</code></td><td>Stats: by_action, by_type, recent events</td></tr>
+            <tr><td><code>POST</code></td><td><code>/dlp/redaction-restore</code></td><td>Restore tokenized value to original</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-secondary,#8b949e)">4 modes: <strong>block</strong> (API keys, private keys), <strong>redact</strong> (SSN replaced with reversible token — AI never sees real value, response de-tokenized back), <strong>mask</strong> (****@domain.com), <strong>allow</strong> (pass through).</p>
+      </section>
+
+      <section id="api-ingress">
+        <h3>Ingress Guard</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/ingress/stats</code></td><td>Blocked, throttled, allowed counts. Risk scores, session phases, cross-session reputation.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-shadow">
+        <h3>Shadow AI</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/shadow-ai</code></td><td>Scan for 12+ AI tools — detected vs approved vs unauthorized</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-graph">
+        <h3>Knowledge Graph</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/graph/stats</code></td><td>Node/edge/event counts, nodes by type (AGENT, THREAT, DATA_ASSET, SESSION)</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-rules">
+        <h3>Block Rules</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/block-rules</code></td><td>List all block rules</td></tr>
+            <tr><td><code>POST</code></td><td><code>/block-rules</code></td><td>Add rule (keyword or regex)</td></tr>
+            <tr><td><code>DELETE</code></td><td><code>/block-rules/{id}</code></td><td>Remove a rule</td></tr>
+            <tr><td><code>POST</code></td><td><code>/block-rules/test</code></td><td>Test content against rules</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="api-taxonomy">
+        <h3>Taxonomy Configuration</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/config/taxonomy</code></td><td>Active breach taxonomy</td></tr>
+            <tr><td><code>PUT</code></td><td><code>/config/taxonomy</code></td><td>Update taxonomy (severity levels, breach types, detection hints)</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <!-- Enterprise -->
+      <section id="rbac">
+        <h2>Enterprise <span class="accent">Features</span></h2>
+        <h3>RBAC (7 Roles)</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Role</th><th>Level</th><th>Access</th></tr></thead>
+          <tbody>
+            <tr><td><code>super_admin</code></td><td>100</td><td>Full platform control</td></tr>
+            <tr><td><code>it_admin</code></td><td>80</td><td>Policies, DLP config, agent enrollment</td></tr>
+            <tr><td><code>analyst</code></td><td>60</td><td>Breach monitor, red team, ingress stats (read-only)</td></tr>
+            <tr><td><code>lead</code></td><td>40</td><td>Team-scoped stats only</td></tr>
+            <tr><td><code>auditor</code></td><td>30</td><td>Compliance dashboards, audit trails (read-only)</td></tr>
+            <tr><td><code>agent</code></td><td>20</td><td>API-only (send events, receive DLP responses)</td></tr>
+            <tr><td><code>developer</code></td><td>10</td><td>No dashboard. IDE notifications only.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--text-secondary,#8b949e)">Auth: X-Role header, EA_*_TOKENS env vars, console API key, or EA_DASHBOARD_TOKEN (backwards compat). Team scoping via X-Team header.</p>
+      </section>
+
+      <section id="enterprise-privacy">
+        <h3>Enterprise Privacy</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/privacy/effective</code></td><td>Effective privacy mode (resolves org → team hierarchy)</td></tr>
+            <tr><td><code>POST</code></td><td><code>/privacy/org</code></td><td>Org-wide policy with per-team overrides</td></tr>
+            <tr><td><code>POST</code></td><td><code>/privacy/schedule</code></td><td>Schedule mode changes (cron + timezone)</td></tr>
+            <tr><td><code>GET</code></td><td><code>/privacy/audit</code></td><td>Policy change audit trail</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="admin-console">
+        <h3>Admin Console</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>GET</code></td><td><code>/api/v1/policies</code></td><td>List all policies with version history</td></tr>
+            <tr><td><code>POST</code></td><td><code>/api/v1/policies</code></td><td>Create/update policy (auto-versioned)</td></tr>
+            <tr><td><code>POST</code></td><td><code>/api/v1/agents/register</code></td><td>Register agent (returns enrollment token)</td></tr>
+            <tr><td><code>POST</code></td><td><code>/api/v1/agents/{id}/approve</code></td><td>Approve pending agent</td></tr>
+            <tr><td><code>POST</code></td><td><code>/api/v1/agents/{id}/revoke</code></td><td>Revoke agent access</td></tr>
+            <tr><td><code>GET</code></td><td><code>/api/v1/events</code></td><td>Cross-agent event stream</td></tr>
+            <tr><td><code>GET</code></td><td><code>/api/v1/dashboard</code></td><td>Org-wide summary</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="breach-engine">
+        <h3>Breach Engine</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary,#8b949e)">Runs on port 8081. Classifies 13 breach types (PII_EXPOSURE, CREDENTIAL_EXPOSURE, UNAUTHORIZED_ACCESS, etc.) with 3 severity levels. Immutable SHA-256 audit trail. Gateway bridge auto-emits on every block or PII detection.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>POST</code></td><td><code>/events</code></td><td>Submit agent event for classification</td></tr>
+            <tr><td><code>GET</code></td><td><code>/breaches</code></td><td>List breaches (tenant-scoped)</td></tr>
+            <tr><td><code>GET</code></td><td><code>/summary</code></td><td>Breach counts by type, severity, agent</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <!-- Red Team -->
+      <section id="redteam-docker">
+        <h2>Red Team &amp; <span class="accent">Eval</span></h2>
+        <h3>Docker Harness (55 agents)</h3>
+        <div class="terminal"><div class="terminal-body" style="padding:0.8rem">
+          <span class="prompt">$</span> <span class="cmd">docker compose</span> <span class="flag">-f docker-compose.redteam.yml up --build -d</span><br>
+          <span class="prompt">$</span> <span class="cmd">docker exec</span> agsec-attacker <span class="flag">python3 /agents/run_all.py</span><br>
+          <span class="success">&#10003;</span> <span class="output">84/84 detected (100%) — 55 agents, 10 OWASP categories</span>
+        </div></div>
+      </section>
+
+      <section id="redteam-browser">
+        <h3>Browser Demo (/redteam)</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary,#8b949e)">Live attack simulation at <code>http://localhost:8000/redteam</code>. 55 agents make real API calls through the gateway and breach engine. Visual flow diagram with ingress guard risk scores, DLP detections, and breach classifications. 100% detection rate.</p>
+      </section>
+
+      <section id="tests">
+        <h3>Test Suites (1,051)</h3>
+        <div class="terminal"><div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span></div>
+        <div class="terminal-body">
+          <span class="output"># v4.30.0 — 1,051 tests across 29 suites</span><br>
+          <span class="prompt">$</span> python3 scripts/test_privacy_mode.py <span class="success"># 28 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_knowledge_graph.py <span class="success"># 33 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_vuln_scanner.py <span class="success"># 45 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_shadow_ai.py <span class="success"># 60 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_ingress_guard.py <span class="success"># 54 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_smart_router.py <span class="success"># 53 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_admin_console.py <span class="success"># 51 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_rbac.py <span class="success"># 95 PASS</span><br>
+          <span class="prompt">$</span> python3 scripts/test_red_team.py <span class="success"># 52 PASS (274 attack techniques)</span><br>
+          <span class="prompt">$</span> <span class="output">... and 20 more suites + 55-agent Docker red-team harness</span>
+        </div></div>
+      </section>
+
+      <!-- Reference -->
+      <section id="env-vars">
+        <h2><span class="accent">Reference</span></h2>
+        <h3>Key Environment Variables</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Variable</th><th>Default</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><code>EA_GATEWAY_API_KEYS</code></td><td>auto-generated</td><td>Comma-separated API keys for gateway auth</td></tr>
+            <tr><td><code>EA_PRIVACY_MODE</code></td><td>balanced</td><td>full_privacy / balanced / permissive</td></tr>
+            <tr><td><code>EA_INGRESS_GUARD</code></td><td>false</td><td>Enable 6-layer ingress guard</td></tr>
+            <tr><td><code>EA_RBAC_ENABLED</code></td><td>true</td><td>Enable role-based access control</td></tr>
+            <tr><td><code>EA_ALLOWED_DOMAINS</code></td><td>(all)</td><td>Comma-separated egress domain allowlist</td></tr>
+            <tr><td><code>EA_DASHBOARD_TOKEN</code></td><td>(none)</td><td>Bearer token for dashboard auth</td></tr>
+            <tr><td><code>EA_SHADOW_AI_ENABLED</code></td><td>true</td><td>Shadow AI detector toggle</td></tr>
+            <tr><td><code>EA_CODE_GUARD_ENABLED</code></td><td>true</td><td>Code fingerprint guard toggle</td></tr>
+            <tr><td><code>EA_LETHAL_TRIFECTA</code></td><td>true</td><td>Lethal Trifecta detector (Simon Willison)</td></tr>
+            <tr><td><code>EA_LLM_PROVIDER</code></td><td>ollama</td><td>Layer 2 LLM: ollama / anthropic / openai</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="compliance">
+        <h3>Compliance Mapping</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Framework</th><th>Coverage</th><th>File</th></tr></thead>
+          <tbody>
+            <tr><td>OWASP Top 10 for LLMs</td><td>8/10</td><td><code>owasp_mapping.json</code></td></tr>
+            <tr><td>NIST AI RMF + 800-53</td><td>14/18</td><td><code>nist_mapping.json</code></td></tr>
+            <tr><td>MITRE ATLAS</td><td>11/14</td><td><code>docs/MITRE_ATLAS_MAPPING.md</code></td></tr>
+            <tr><td>CSA ARIA</td><td>12/15</td><td><code>csa_aria_mapping.json</code></td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <section id="architecture">
+        <h3>Architecture (25 components)</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary,#8b949e)">20 core components + 5 distribution channels. DLP Engine, API Gateway, LLM Proxy, Breach Engine, Block Rules, VS Code Extension, Chrome Extension, Auto-Instrumentation SDK, Privacy Mode, Knowledge Graph, Vulnerability Scanner, Code Fingerprint Guard, Shadow AI Detector, Security Memory Bridge, Smart Router, Admin Console, Red Team Agents, Ingress Guard, RBAC Middleware, Smart Redaction Engine. Distribution: CLI installer, pre-commit hooks, GitHub Action, admin dashboard, Docker.</p>
+      </section>
+
     </div>
-  </section>
-
-  <!-- API Reference -->
-  <section>
-    <div class="container">
-      <div class="section-header"><h2 class="section-title">API <span class="accent">Reference</span></h2></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Smart Routing</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/routing/models</code></td><td>List all 14 models with capabilities, costs, speed, coding/reasoning scores</td></tr>
-          <tr><td><code>GET</code></td><td><code>/routing/stats</code></td><td>Per-provider request counts, latency (avg/p95), cost, failure rates</td></tr>
-          <tr><td><code>GET</code></td><td><code>/routing/config</code></td><td>Current routing strategy (auto/cheapest/fastest/best_quality/local_only)</td></tr>
-          <tr><td><code>POST</code></td><td><code>/routing/config?strategy=X</code></td><td>Change routing strategy</td></tr>
-          <tr><td><code>GET</code></td><td><code>/routing/explain?prompt=X</code></td><td>Dry run — shows which model would be selected and why</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Privacy Mode</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/privacy</code></td><td>Get current privacy mode, cloud_llm_blocked, allowed_providers</td></tr>
-          <tr><td><code>POST</code></td><td><code>/privacy?mode=X</code></td><td>Set mode: full_privacy, balanced, permissive. Returns 400 on invalid.</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Shadow AI</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/shadow-ai</code></td><td>Scan for AI tools — returns detected tools, approved vs unauthorized</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Knowledge Graph</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/graph/stats</code></td><td>Node/edge/event counts, nodes by type</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Block Rules</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/block-rules</code></td><td>List all block rules</td></tr>
-          <tr><td><code>POST</code></td><td><code>/block-rules</code></td><td>Add a new block rule (keyword or regex)</td></tr>
-          <tr><td><code>DELETE</code></td><td><code>/block-rules/{id}</code></td><td>Remove a block rule</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Taxonomy Configuration</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/config/taxonomy</code></td><td>Get active breach taxonomy</td></tr>
-          <tr><td><code>GET</code></td><td><code>/config/taxonomy/template</code></td><td>Get default template for customization</td></tr>
-          <tr><td><code>PUT</code></td><td><code>/config/taxonomy</code></td><td>Update taxonomy (severity levels, breach types, detection hints)</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Admin Console</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/api/v1/policies</code></td><td>List all policies with version history</td></tr>
-          <tr><td><code>POST</code></td><td><code>/api/v1/policies</code></td><td>Create or update a policy (auto-versioned)</td></tr>
-          <tr><td><code>POST</code></td><td><code>/api/v1/agents/register</code></td><td>Register a new agent (returns enrollment token)</td></tr>
-          <tr><td><code>POST</code></td><td><code>/api/v1/agents/{id}/approve</code></td><td>Approve a pending agent</td></tr>
-          <tr><td><code>POST</code></td><td><code>/api/v1/agents/{id}/revoke</code></td><td>Revoke an agent's access</td></tr>
-          <tr><td><code>GET</code></td><td><code>/api/v1/events</code></td><td>Query cross-agent event stream</td></tr>
-          <tr><td><code>GET</code></td><td><code>/api/v1/dashboard</code></td><td>Org-wide summary aggregation</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Enterprise Privacy</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/privacy/effective</code></td><td>Get effective privacy mode for a team (resolves org → team hierarchy)</td></tr>
-          <tr><td><code>POST</code></td><td><code>/privacy/org</code></td><td>Push org-wide privacy policy with per-team overrides</td></tr>
-          <tr><td><code>GET</code></td><td><code>/privacy/audit</code></td><td>Query privacy policy change audit trail</td></tr>
-          <tr><td><code>POST</code></td><td><code>/privacy/schedule</code></td><td>Schedule privacy mode changes (cron + timezone)</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Ingress Guard</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>GET</code></td><td><code>/ingress/stats</code></td><td>Ingress guard stats — blocked, throttled, allowed counts, top risk IPs</td></tr>
-        </tbody>
-      </table></div>
-
-      <h3 style="margin: 2rem 0 1rem;">Gateway Core</h3>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Method</th><th>Endpoint</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>POST</code></td><td><code>/v1/chat/completions</code></td><td>Secure chat completions proxy (OpenAI-compatible). Use model: "auto" for smart routing.</td></tr>
-          <tr><td><code>GET</code></td><td><code>/health</code></td><td>Liveness probe</td></tr>
-          <tr><td><code>GET</code></td><td><code>/v1/audit</code></td><td>Query audit log entries</td></tr>
-        </tbody>
-      </table></div>
-    </div>
-  </section>
-
-  <!-- Test Suite -->
-  <section class="bg-warm">
-    <div class="container">
-      <div class="section-header"><h2 class="section-title">1051 <span class="accent">Tests</span></h2></div>
-      <div class="terminal"><div class="terminal-bar"><span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span></div>
-      <div class="terminal-body">
-        <span class="output"># v4.29.0 modules (1051 tests across 29 suites)</span><br>
-        <span class="prompt">$</span> python3 scripts/test_privacy_mode.py <span class="success"># 28 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_knowledge_graph.py <span class="success"># 33 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_vuln_scanner.py <span class="success"># 45 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_code_fingerprint.py <span class="success"># 35 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_shadow_ai.py <span class="success"># 60 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_ingress_guard.py <span class="success"># 54 PASS (6-layer external agent defense)</span><br><br>
-        <span class="output"># Smart routing + admin (104 tests)</span><br>
-        <span class="prompt">$</span> python3 scripts/test_smart_router.py <span class="success"># 53 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_admin_console.py <span class="success"># 51 PASS</span><br><br>
-        <span class="output"># Core + red team (216 tests)</span><br>
-        <span class="prompt">$</span> python3 scripts/smoke_test.py <span class="success"># 31 PASS</span><br>
-        <span class="prompt">$</span> python3 scripts/test_red_team.py <span class="success"># 52 PASS (adversarial, 274 attack techniques)</span><br>
-        <span class="prompt">$</span> <span class="output">... and 10 more test suites + 55-agent Docker red-team harness</span>
-      </div></div>
-    </div>
-  </section>
-
-  <!-- Ports -->
-  <section>
-    <div class="container">
-      <div class="section-header"><h2 class="section-title">Service <span class="accent">Ports</span></h2></div>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Service</th><th>Port</th><th>Start Command</th></tr></thead>
-        <tbody>
-          <tr><td>API Gateway + Dashboard</td><td>8000</td><td><code>uvicorn main:app --port 8000</code></td></tr>
-          <tr><td>LLM Proxy</td><td>18790</td><td><code>python3 llm/llm_proxy.py --port 18790</code></td></tr>
-          <tr><td>Breach Engine</td><td>8081</td><td><code>uvicorn breach_intel.main:app --port 8081</code></td></tr>
-        </tbody>
-      </table></div>
-    </div>
-  </section>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -239,6 +452,30 @@
       <div class="footer-bottom"><span class="footer-copy">&copy; 2026 SecureMind.</span><div class="footer-socials"><a href="https://github.com/secure-mind-live/agnostic-security-releases" target="_blank">GitHub</a></div></div>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
+  <script>
+  // Scroll-spy: highlight active sidebar link
+  (function(){
+    var links = document.querySelectorAll('.docs-nav-group a');
+    var sections = [];
+    links.forEach(function(a){
+      var id = a.getAttribute('href');
+      if(id && id.startsWith('#')){
+        var el = document.querySelector(id);
+        if(el) sections.push({el:el, link:a});
+      }
+    });
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY + 120;
+      var active = null;
+      for(var i = sections.length - 1; i >= 0; i--){
+        if(sections[i].el.offsetTop <= y){ active = sections[i]; break; }
+      }
+      links.forEach(function(a){ a.classList.remove('active'); });
+      if(active) active.link.classList.add('active');
+    });
+  })();
+  </script>
 </body>
 </html>
